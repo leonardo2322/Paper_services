@@ -1,0 +1,1 @@
+En este proyecto practicare el ORM de django creando una app de tienda 
