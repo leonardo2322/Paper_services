@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+<div class="card card-default">
+    <div class="card-header">
+        <div class="card-title">
+            {{ title }}
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped " id="list-categorys">
+            <thead>
+                {% block head %}
+                
+                
+                {% endblock head %}
+          
+            </thead>
+            <tbody>
+                {% block columns %}
+
+                
+                {% endblock columns %}
+             
+            </tbody>
+          </table>
+          <div class="card-footer">
+            <button class="btn btn-primary btn-flat"><i class="fa-solid fa-plus"></i>
+                Nuevo registro
+            </button>
+          </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripting %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let table = new DataTable('#list-categorys');
+       
+    });
+    
+    $('#boton').bind('click', function() {
+        if(!$('#navbarNav').hasClass('show')){
+            $('#navbarNav').addClass('show')
+        }
+        else{
+            $('#navbarNav').removeClass('show')
+        }
+      });
+</script>
+{% endblock scripting %}
