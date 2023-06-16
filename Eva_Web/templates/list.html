@@ -1,34 +1,37 @@
 {% extends 'base.html' %} {% block content %}
-<div class="card card-default">
-    <div class="card-header">
-        <div class="card-title">
-            {{ title }}
+<main class="container mb-5" >
+    <div class="card card-default mt-5 ">
+        <div class="card-header">
+            <div class="card-title">
+                {{ title }}
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped " id="list-categorys">
+                <thead>
+                    {% block head %}
+                    
+                    
+                    {% endblock head %}
+              
+                </thead>
+                <tbody>
+                    {% block columns %}
+    
+                    
+                    {% endblock columns %}
+                 
+                </tbody>
+              </table>
+              <div class="card-footer">
+                
+                <a class="btn btn-primary btn-flat" href="/create/category"><i class="fa-solid fa-plus"></i>
+                    Nuevo registro
+                </a>
+              </div>
         </div>
     </div>
-    <div class="card-body">
-        <table class="table table-striped " id="list-categorys">
-            <thead>
-                {% block head %}
-                
-                
-                {% endblock head %}
-          
-            </thead>
-            <tbody>
-                {% block columns %}
-
-                
-                {% endblock columns %}
-             
-            </tbody>
-          </table>
-          <div class="card-footer">
-            <button class="btn btn-primary btn-flat"><i class="fa-solid fa-plus"></i>
-                Nuevo registro
-            </button>
-          </div>
-    </div>
-</div>
+</main>
 
 {% endblock %}
 {% block scripting %}
