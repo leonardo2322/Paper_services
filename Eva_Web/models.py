@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+
 # Create your models here.
 gender_choices = (
     ('male','Masculino'),
@@ -25,6 +26,10 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    #def get_image(self):
+    #    if self.image:
+         #   return '{}{}'.format(MEDIA_URL,self.image)
+        #return '{}{}'.format(STATIC_URL,'img/empty.jpg')
     class Meta:
         verbose_name = 'Producto'
         verbose_name_plural = 'Productos'
